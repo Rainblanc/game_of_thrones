@@ -1,0 +1,26 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": "tsconfig.json", "sourceType": "module" },
+  "plugins": ["@typescript-eslint"],
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "plugin:import/recommended"],
+  "root": true,
+  "env": { "node": true, "jest": true },
+  "ignorePatterns": [],
+  "settings": {
+    "import/extensions": [".js", ".ts"],
+    "import/ignore": ["node_modules"]
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["warn"],
+    "import/no-unresolved": "off",
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-types": "off",
+    "max-len": [1, 125, 2],
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "lines-between-class-members": ["error", "always"]
+  }
+}
