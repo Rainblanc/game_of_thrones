@@ -4,9 +4,10 @@ import styles from './text-input.module.css';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  error?: string;
 }
 
-const TextInput = ({ label, className, type = 'text', ...props }: TextInputProps) => {
+const TextInput = ({ label, className, type = 'text', error, required, ...props }: TextInputProps) => {
   const [focused, setFocused] = useState(props.autoFocus || false);
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement, Element>) => {
@@ -20,18 +21,33 @@ const TextInput = ({ label, className, type = 'text', ...props }: TextInputProps
   };
 
   return (
-    <div className={className}>
+    <div
+      className={classNames(className, {
+        [styles.container]: !className,
+      })}
+    >
       {!!label && (
         <label
           htmlFor={props.id}
           className={classNames(styles.label, {
             [styles.label_focused]: focused,
+            [styles.label_error]: !!error && !focused,
           })}
         >
           {label}
+          {required && '*'}
         </label>
       )}
-      <input type={type} {...props} onFocus={handleFocus} onBlur={handleBlur} className={styles.input} />
+      <input
+        type={type}
+        {...props}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        className={classNames(styles.input, {
+          [styles.input_error]: !!error,
+        })}
+      />
+      {!!error && <span className={styles.error}>{error}</span>}
     </div>
   );
 };
