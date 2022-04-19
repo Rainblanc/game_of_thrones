@@ -1,0 +1,23 @@
+.container {
+  @apply inline-flex items-center px-5 py-2.5 shadow-primary-main rounded-md
+    text-white bg-primary-main border border-primary-main duration-150;
+}
+.container:disabled {
+  @apply cursor-not-allowed;
+}
+
+.container:disabled:hover {
+  @apply translate-y-0;
+}
+
+.container:hover {
+  @apply opacity-95 shadow -translate-y-px;
+}
+
+.container:active {
+  @apply translate-y-0;
+}
+
+.title {
+  @apply text-sm font-semibold;
+}

@@ -1,0 +1,19 @@
+.input {
+  @apply border px-3 py-2 rounded border-primary-gray transition-colors;
+}
+
+.input:focus-visible {
+  @apply outline-0;
+}
+
+.input:focus {
+  @apply border-primary-main;
+}
+
+.label {
+  @apply block text-sm text-primary-black transition-colors;
+}
+
+.label_focused {
+  @apply text-primary-main;
+}
