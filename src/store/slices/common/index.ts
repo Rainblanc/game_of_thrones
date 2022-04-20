@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface CommonState {
   loading: boolean;
@@ -11,7 +11,11 @@ const initialState: CommonState = {
 const commonSlice = createSlice({
   name: 'common',
   initialState,
-  reducers: {},
+  reducers: {
+    setLoading(state, { payload }: PayloadAction<boolean>) {
+      state.loading = payload;
+    },
+  },
 });
 
 export const commonReducer = commonSlice.reducer;

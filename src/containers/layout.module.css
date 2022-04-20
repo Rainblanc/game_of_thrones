@@ -1,3 +1,3 @@
 .container {
-  background-image: url('https://oldschoolgrappling.com/wp-content/uploads/2018/08/Background-opera-speeddials-community-web-simple-backgrounds.jpg');
+  @apply w-screen px-20;
 }

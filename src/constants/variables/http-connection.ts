@@ -1,5 +1,7 @@
 import axios from 'axios';
 
-export const HttpConnection = axios.create({
-  baseURL: '',
+const HttpConnection = axios.create({
+  baseURL: process.env.REACT_APP_BASE_API,
 });
+
+export { HttpConnection };
