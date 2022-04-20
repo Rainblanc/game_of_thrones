@@ -1,0 +1,35 @@
+.container {
+  @apply w-full;
+}
+
+.input {
+  @apply border px-3 py-2 rounded border-primary-gray transition-colors w-full;
+}
+
+.input:focus-visible {
+  @apply outline-0;
+}
+
+.input:focus {
+  @apply border-primary-main;
+}
+
+.input_error {
+  @apply border-primary-red;
+}
+
+.label {
+  @apply block text-sm text-primary-black transition-colors;
+}
+
+.label_focused {
+  @apply text-primary-main;
+}
+
+.label_error {
+  @apply text-primary-red;
+}
+
+.error {
+  @apply text-primary-red text-xs block;
+}

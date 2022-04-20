@@ -1,0 +1,4 @@
+.container {
+  @apply w-screen h-screen flex items-center justify-center;
+  background-image: url('../../../public/assets/images/background.jpeg');
+}

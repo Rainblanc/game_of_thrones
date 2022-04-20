@@ -21,6 +21,7 @@
     "@typescript-eslint/ban-types": "off",
     "max-len": [1, 125, 2],
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
-    "lines-between-class-members": ["error", "always"]
+    "lines-between-class-members": ["error", "always"],
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

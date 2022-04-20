@@ -1,21 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
 
-function App() {
+import { Provider } from 'react-redux';
+import { persistor, store } from 'store';
+import { AppRouter } from 'router';
+import { PersistGate } from 'redux-persist/integration/react';
+import { LoadingProvider } from 'components/loading';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<></>}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          {() => (
+            <LoadingProvider>
+              <AppRouter />
+            </LoadingProvider>
+          )}
+        </PersistGate>
+      </Provider>
+    </Suspense>
   );
-}
-
-export default App;
+};
+export { App };

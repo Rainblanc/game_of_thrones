@@ -1,0 +1,15 @@
+.pagination_button {
+  @apply relative focus:outline-none h-9 min-w-[2.25rem] mx-1 border rounded hover:border-primary-main;
+}
+
+.active_pagination_button {
+  @apply bg-primary-main;
+}
+
+.pagination_text {
+  @apply text-primary-main;
+}
+
+.active_pagination_text {
+  @apply text-white;
+}
